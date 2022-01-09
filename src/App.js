@@ -9,14 +9,17 @@ function App() {
   const [searchText, setSearchText] = useState('')
   const [totalItems, setTotalItems] = useState(-1)
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const handleSearch = () => {
     if (searchText !== '') {
+      setLoading(true)
       fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}&maxResults=12`)
         .then(resp => resp.json())
         .then(data => {
           setTotalItems(data.totalItems)
           setBooks(data.items)
+          setLoading(false)
         })
     }
   }
@@ -37,10 +40,11 @@ function App() {
             if (e.key === 'Enter') handleSearch()
           }} />
         <FontAwesomeIcon className='search-icon' icon={faSearch} onClick={handleSearch} />
-        <p className='books-found'>{totalItems >= 0 ? `${totalItems} book${totalItems > 1 ? 's' : ''} found` : ''}</p>
+        <p className='books-found'>{!loading && totalItems >= 0 ? `${totalItems} book${totalItems !== 1 ? 's' : ''} found` : ''}</p>
       </div>
+      {loading && <div class="loader"></div>}
       <div className='book-card-container'>
-        {books?.map(book => <BookCard key={book.id} book={book}></BookCard>)}
+        {!loading && books?.map(book => <BookCard key={book.id} book={book}></BookCard>)}
       </div>
     </div>
   );
