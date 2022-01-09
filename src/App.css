@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #74CEEB;
+}
+
+.app {
+  margin-top: 88px;
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.query-input {
+  width: 420px;
+  height: 36px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  font-size: 18px;
+  padding-left: 8px;
+  padding-right: 36px;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+.search-icon {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 9px;
+  font-size: 18px;
+}
+
+.search-icon:hover {
+  cursor: pointer;
+}
