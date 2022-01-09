@@ -1,0 +1,51 @@
+.book-card {
+    width: 460px;
+    height: 300px;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    background-color: gainsboro;
+    box-shadow: lightslategray 1px 2px 4px 0px;
+}
+
+.book-cover {
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.book-info {
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rating-icon {
+    color: goldenrod;
+}
+
+.more-info-button {
+    color: white;
+    background-color: steelblue;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: normal;
+    transition: all ease 0.1s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info-button:hover {
+    cursor: pointer;
+}
+
+.more-info-button:active {
+    transform: scale(0.95);
+}
