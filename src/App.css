@@ -14,14 +14,19 @@ body {
 
 .title {
   font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.search-container {
+  margin-bottom: 60px;
 }
 
 .query-input {
-  width: 420px;
-  height: 36px;
+  width: 440px;
+  height: 40px;
   border: 1px solid grey;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 20px;
   padding-left: 8px;
   padding-right: 36px;
 }
@@ -37,10 +42,23 @@ input:focus {
 .search-icon {
   position: absolute;
   margin-left: -30px;
-  margin-top: 9px;
-  font-size: 18px;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .search-icon:hover {
   cursor: pointer;
+}
+
+.book-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  margin: 0px 60px;
+}
+
+.books-found {
+  font-weight: bold;
+  font-style: italic;
 }
