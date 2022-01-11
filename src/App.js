@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
@@ -10,8 +10,6 @@ function App() {
   const [totalItems, setTotalItems] = useState(-1)
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(false)
-
-  const inputRef = useRef()
 
   const handleSearch = () => {
     if (searchText !== '') {
