@@ -42,12 +42,12 @@ function App() {
         <FontAwesomeIcon className='search-icon' icon={faSearch} onClick={handleSearch} />
         <p className='books-found'>{!loading && totalItems >= 0 ? `${totalItems} book${totalItems !== 1 ? 's' : ''} found` : ''}</p>
       </div>
-      {loading && <div className="loader"></div>}
+      {loading && <div className="loader" />}
       <div className='book-card-container'>
         {!loading && books?.map(book => <BookCard key={book.id} book={book}></BookCard>)}
       </div>
     </div>
-  );
+  )
 }
 
 export default App
