@@ -8,7 +8,7 @@ body {
 }
 
 .app {
-  margin-top: 88px;
+  margin-top: 80px;
   text-align: center;
 }
 
@@ -80,5 +80,30 @@ input:focus {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 596px) {
+  .title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .search-container {
+    margin-bottom: 40px;
+  }
+
+  .query-input {
+    width: 260px;
+  }
+
+  input::placeholder {
+    font-size: 0;
+  }
+
+  .book-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
