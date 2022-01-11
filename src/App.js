@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './App.css'
@@ -10,6 +10,8 @@ function App() {
   const [totalItems, setTotalItems] = useState(-1)
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(false)
+
+  const inputRef = useRef()
 
   const handleSearch = () => {
     if (searchText !== '') {
@@ -37,7 +39,10 @@ function App() {
           value={searchText}
           onChange={e => setSearchText(e.target.value)}
           onKeyPress={e => {
-            if (e.key === 'Enter') handleSearch()
+            if (e.key === 'Enter') {
+              e.target.blur()
+              handleSearch()
+            }
           }} />
         <FontAwesomeIcon className='search-icon' icon={faSearch} onClick={handleSearch} />
         <p className='books-found'>{!loading && totalItems >= 0 ? `${totalItems} book${totalItems !== 1 ? 's' : ''} found` : ''}</p>
