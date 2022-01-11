@@ -1,3 +1,7 @@
+html {
+  width: 100vw;
+}
+
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
