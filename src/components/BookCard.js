@@ -5,8 +5,11 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const BookCard = ({ book }) => {
 
-    const title = book.volumeInfo.title
-    const authors = book.volumeInfo.authors
+    let title = book.volumeInfo.title
+    title = title.length > 62 ? title.slice(0, 62).concat('...') : title
+    let authors = book.volumeInfo.authors
+    authors = authors ? 'by ' + authors.join(', ') : ''
+    authors = authors.length > 48 ? authors.slice(0, 48).concat('...') : authors
     const publishedDate = book.volumeInfo.publishedDate
     const publisher = book.volumeInfo.publisher
     const averageRating = book.volumeInfo.averageRating
@@ -24,8 +27,8 @@ const BookCard = ({ book }) => {
             <div className='book-info'>
                 <div>
                     <h3>{title}</h3>
-                    <p>{authors ? 'by ' + authors.join(', ') : ''}</p>
-                    <p>Published on: {publishedDate}</p>
+                    <p>{authors}</p>
+                    <p>Published on: {publishedDate || 'N/A'}</p>
                     <p>Publisher: {publisher || 'N/A'}</p>
                     <p>Rating: {stars.length !== 0 ? stars : 'N/A'}</p>
                 </div>
